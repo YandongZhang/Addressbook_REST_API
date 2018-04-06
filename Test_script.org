@@ -1,0 +1,66 @@
+
+*** before start the server
+The test were mainly done in a windows 10 computer.The projects includes two .go file in a single directory.Before the test, we use the below command to generate an addressbook file including 10 (you can change the number freely) entries.
+These entries are saved in a file named as "myaddressbook.csv"
+---------------------
+
+go run createaddressbook.go 10
+
+*** start the server 
+
+go run server.go
+
+*** json format for curl.exe in windows 10 system
+
+For the curl.exe in the windows 10 system, the internal double quote should be led by a forward slash.
+The whole json body should be currounded by double quote, not single quote.
+For example:
+"{\"Id\":\"2X\"}"
+
+In linux system, the forward slash should be removed and the json should look like:
+'{"Id":"2X"}'
+
+*** readall: browser will read all entries in the addressbook 
+
+curl localhost/readall
+
+*** add an entry with the Id=2X
+
+curl -d "{\"ID\":\"2X\",\"Firstname\":\"Firstname0\",\"Lastname\":\"Lastname0\",\"Email\":\"Email0@email.com\",\"Phonenumber\":\"Phonenumber0\"}" localhost/appendentry
+
+*** delete an entry with Id=2
+
+curl -d "{\"ID\":\"2\"}" localhost/deleteentry
+
+*** try to delete an entry with wrong ID
+
+curl -d "{\"ID\":\"notexist\"}" localhost/deleteentry
+
+*** modify an entry with Id=2X
+
+curl -d "{\"ID\":\"2X\",\"Firstname\":\"Firstname_M\",\"Lastname\":\"Lastname0\",\"Email\":\"Email0@email.com\",\"Phonenumber\":\"Phonenumber0\"}" localhost/modifyentry
+
+*** modify a non-exist entry by using the wrong ID
+
+curl -d "{\"ID\":\"noexist\",\"Firstname\":\"Firstname_M\",\"Lastname\":\"Lastname0\",\"Email\":\"Email0@email.com\",\"Phonenumber\":\"Phonenumber0\"}" localhost/modifyentry
+
+*** Upload the xxx1.csv file to the server and replace the originial addressbook
+
+curl localhost/uploadaddressbook -F "file=@tobeuploaded.csv"
+
+*** Download the addressbook file to the local directory and saved it as "myfile.csv"
+
+curl localhost/downloadaddressbook --output myfile.csv
+
+*** read an entry by the given Id; 
+
+curl -d "{\"Id\":\"2\"}" localhost/readentry
+*** read an entry by using the wrong Id; 
+curl -d "{\"Id\":\"no exist\"}" localhost/readentry
+
+*** curl version for windows 10
+curl 7.59.0 (x86_64-pc-win32) libcurl/7.59.0 OpenSSL/1.1.0h (WinSSL) zlib/1.2.11 brotli/1.0.3 WinIDN libssh2/1.8.0 nghttp2/1.31.0
+Release-Date: 2018-03-14
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp 
+Features: AsynchDNS IDN IPv6 Largefile SSPI Kerberos SPNEGO NTLM SSL libz brotli TLS-SRP HTTP2 HTTPS-proxy MultiSSL 
+
