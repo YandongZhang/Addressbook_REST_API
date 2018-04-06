@@ -1,6 +1,7 @@
 
 *** before start the server
-The test were mainly done in a windows 10 computer.The two .go file and a csv file (tobeupload.csv) should be copied to the same directory.
+The two .go file had been tested in both windows 10 and Kali Linux.
+The two .go file and a csv file (tobeupload.csv) should be copied to the same directory.
 
 Before the test, we use the below command to generate an addressbook file including 10 (you can change the number freely) entries.
 These entries are saved in a file named as "myaddressbook.csv"
@@ -14,7 +15,9 @@ go run server.go
 *** json format for curl.exe in windows 10 system
 
 For the curl.exe in the windows 10 system, the internal double quote should be led by a back slash.
-The whole json body should be currounded by double quote, not single quote. (Press the raw button and you will see the slash)
+The whole json body should be currounded by double quote, not single quote. 
+(Press the raw button and you will see the slash)
+
 For example:
 "{\"Id\":\"2X\"}"
 
