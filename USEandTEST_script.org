@@ -1,6 +1,6 @@
 
 *** before start the server
-The test were mainly done in a windows 10 computer.The two .go file and a csv file (tobeupload.csv) should be sopied to the same directory.
+The test were mainly done in a windows 10 computer.The two .go file and a csv file (tobeupload.csv) should be copied to the same directory.
 
 Before the test, we use the below command to generate an addressbook file including 10 (you can change the number freely) entries.
 These entries are saved in a file named as "myaddressbook.csv"
