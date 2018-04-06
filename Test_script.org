@@ -5,7 +5,6 @@ These entries are saved in a file named as "myaddressbook.csv"
 ---------------------
 
 go run createaddressbook.go 10
----------------------
 
 *** start the server 
 
