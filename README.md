@@ -1,9 +1,8 @@
 ### Design motivation  
 
-From my understanding, the REST philosophy modeled a software demand into two parts: resources(nouns) and the actions(verbs) that 
-used these resources. Usually the resources are specificed by the URI and the actions are specificed by the http methods. ("GET","POST",etc.) 
+From my understanding, the key insight of the REST philosophy is: modeling a software demand (service) into two parts: resources(nouns) and the actions(verbs) that used these resources. Usually the resources are specificed by the URI and the actions are specificed by the http methods. ("GET","POST",etc.) 
 
-In our case, assuming a structure "book" in the server:
+In our case, assuming a structure "addressbook" in the server, then we have:
 
 Resources: addressbook 
 Actions: download,upload,delete entry,add entry,...
