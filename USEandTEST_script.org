@@ -13,8 +13,8 @@ go run server.go
 
 *** json format for curl.exe in windows 10 system
 
-For the curl.exe in the windows 10 system, the internal double quote should be led by a forward slash.
-The whole json body should be currounded by double quote, not single quote. (Press the raw button and you will see the forward slash)
+For the curl.exe in the windows 10 system, the internal double quote should be led by a back slash.
+The whole json body should be currounded by double quote, not single quote. (Press the raw button and you will see the slash)
 For example:
 "{\"Id\":\"2X\"}"
 
